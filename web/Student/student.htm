@@ -1,0 +1,236 @@
+<html>
+<head>
+<title>
+Campcon
+</title>
+<link rel="shortcut icon" href="18.png" />
+<script type="text/javascript" src="jquery-latest.pack.js"></script>
+
+<!-- 3d effects -->
+<link rel="stylesheet" type="text/css" href="style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/style_common.css" />
+    <link rel="stylesheet" type="text/css" href="css/style9.css" />
+	
+	<script type="text/javascript" src="js/modernizr.custom.69142.js"></script>
+	<script type="text/javascript" src="js/ga.js"></script>
+<!-- End 3d effects -->
+<script>
+function animateLeft(obj, from, to){
+   if(to >= from){ 
+	document.getElementById("content").style.left='0px';
+       return;  
+   }
+   else {
+       var box = obj;
+       box.style.left = from + "px";
+       setTimeout(function(){
+           animateLeft(obj, from - 5, to);
+       }, 0.01) 
+   }
+}
+
+function animateMe() {
+animateLeft(document.getElementById("content"), 500, 0);
+}
+
+
+
+function animateRight(ob, fro, tom){
+   if(fro >= tom){         
+       return;  
+   }
+   else {
+       var bo = ob;
+       bo.style.left = fro + "px";
+       setTimeout(function(){
+           animateRight(ob, fro + 3, tom);
+       }, 0.01) 
+   }
+}
+
+function animateMe2() {
+animateRight(document.getElementById("content"), 0, 500);
+}
+</script>
+<script>
+$(document).ready(function() {	
+
+	//select all the a tag with name equal to modal
+	$('a[name=modal]').click(function(e) {
+		//Cancel the link behavior
+		e.preventDefault();
+		
+		//Get the A tag
+		var id = $(this).attr('href');
+	
+		//Get the screen height and width
+		var maskHeight = $(document).height();
+		var maskWidth = $(window).width();
+	
+		//Set heigth and width to mask to fill up the whole screen
+		$('#mask').css({'width':maskWidth,'height':maskHeight});
+		
+		//transition effect		
+		$('#mask').fadeIn(1000);	
+		$('#mask').fadeTo("slow",0.7);
+	
+		//Get the window height and width
+		var winH = $(window).height();
+		var winW = $(window).width();
+              
+		//Set the popup window to center
+		$(id).css('top',  winH/2-$(id).height()/2);
+		$(id).css('left', winW/2-$(id).width()/2);
+	
+		//transition effect
+		$(id).fadeIn(2000); 
+	
+	});
+	
+	//if close button is clicked
+	$('.window .close').click(function (e) {
+		//Cancel the link behavior
+		e.preventDefault();
+		
+		$('#mask').hide();
+		$('.window').hide();
+	});		
+	
+	//if mask is clicked
+	$('#mask').click(function () {
+		$(this).hide();
+		$('.window').hide();
+	});			
+
+	$(window).resize(function () {
+	 
+ 		var box = $('#boxes .window');
+ 
+        //Get the screen height and width
+        var maskHeight = $(document).height();
+        var maskWidth = $(window).width();
+      
+        //Set height and width to mask to fill up the whole screen
+        $('#mask').css({'width':maskWidth,'height':maskHeight});
+               
+        //Get the window height and width
+        var winH = $(window).height();
+        var winW = $(window).width();
+
+        //Set the popup window to center
+        box.css('top',  winH/2 - box.height()/2);
+        box.css('left', winW/2 - box.width()/2);
+	 
+	});
+	
+});
+</script>
+
+<link rel="stylesheet" type="text/css" href="slidebox.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="layer.css" media="screen" />
+
+</head>
+<body background="Capture.jpg">
+
+
+
+
+
+	<div id="content" style="left:500px;" >
+		<ul class="movieposters">
+			<li>
+				<canvas id="myCanvas" width="250" height="410" style="border:10px solid white; background-color:red;"></canvas>
+				<a href="#dialog1" name="modal" onclick="animateMe()">
+				<div class="movieinfo">
+					<h2>Student</h2>
+					
+					<b>Options</b>
+				</div></a>
+			</li>
+		</ul>
+	</div>
+
+
+
+<div id="boxes">
+<div id="dialog1" class="window">
+<a href="#" style="position:relative; left:520px; top:-166px; background-color:black; display:block; 
+border-radius: 6px; border: none; font-size:20px; width:25px; height:24px; z-index:+1; text-align:center; 
+color:white; text-decoration:none" class="close" onclick="animateMe2()"/>X</a>
+
+<div class="container">
+            <div class="main">
+                <!-- NINTH EXAMPLE -->
+                <div class="view view-ninth">
+				<h1 style="color:white; background-color:red; text-shadow: 5px 5px black; font-weight:bold;">Attendence</h1>
+                    <canvas id="myCanvas" width="300" height="200" style="background-color:red;"></canvas>
+					
+                    <div class="mask mask-1"></div>
+                    <div class="mask mask-2"></div>
+                    <div class="content">
+                        <h2>Attendence</h2>
+                        <a href="attendviewstudent.jsp" style="position:relative; left: 0px; top: 25px; font-size:25px;">View</a> 
+						
+                    </div>
+                </div>
+                <div class="view view-ninth">
+				<h1 style="color:white; background-color:green; text-shadow: 5px 5px black; font-weight:bold;">Marks</h1>
+                    <canvas id="myCanvas" width="300" height="200" style="background-color:green;"></canvas>
+                    <div class="mask mask-1"></div>
+                    <div class="mask mask-2"></div>
+                    <div class="content">
+                        <h2>Marks</h2>
+                        <a href="marksviewstudent.jsp" style="position:relative; left: 0px; top: 25px; font-size:25px;">View</a> 
+						
+                    </div>
+                </div>
+                <div class="view view-ninth">
+				<h1 style="color:white; background-color:blue; text-shadow: 5px 5px black; font-weight:bold;">Upload File</h1>
+                    <canvas id="myCanvas" width="300" height="200" style="background-color:blue;"></canvas>
+                    <div class="mask mask-1"></div>
+                    <div class="mask mask-2"></div>
+                    <div class="content">
+                        <h2>Upload File</h2>
+                        <a href="fileuploadstudent.jsp" style="position:relative; left: -15px; top: 25px; font-size:20px;">Upload File</a> 
+						<a href="fileviewstudent.jsp" style="position:relative; right: -15px; top: 25px; font-size:20px;">View Files</a>
+                    </div>
+                </div>
+                <div class="view view-ninth">
+				<h1 style="color:white; background-color:orange; text-shadow: 5px 5px black; font-weight:bold;">Post Notice</h1>
+                    <canvas id="myCanvas" width="300" height="200" style="background-color:orange;"></canvas>
+                    <div class="mask mask-1"></div>
+                    <div class="mask mask-2"></div>
+                    <div class="content">
+					<h2>Post Notice</h2>
+						<a href="attendenceadd1.jsp" style="position:relative; right: 0px; top: 25px; font-size:20px;">View Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+    </div>
+</div>
+
+<div id="mask"></div>
+</div>
+
+
+<script type="text/javascript">	
+			
+			Modernizr.load({
+				test: Modernizr.csstransforms3d && Modernizr.csstransitions,
+				yep : ['js/jquery.min.js','js/jquery.hoverfold.js'],
+				nope: 'css/fallback.css',
+				callback : function( url, result, key ) {
+						
+					if( url === 'js/jquery.hoverfold.js' ) {
+						$( '#grid' ).hoverfold();
+					}
+
+				}
+			});
+				
+		</script>
+</body>
+</html>

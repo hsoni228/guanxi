@@ -1,0 +1,44 @@
+#shape {
+   display:block;
+   width:80px;
+   
+   position:absolute;
+   left:70px;
+   top:-50px;
+/* width has to be 70% of height */
+/* could use width:70%; in a square container */
+   height:250px;
+   background: -webkit-linear-gradient(red, black); /* For Safari 5.1 to 6.0 */
+background: -o-linear-gradient(red, black); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(red, black); /* For Firefox 3.6 to 15 */
+background: linear-gradient(red, black); /* Standard syntax (must be last) */
+
+/* beware that Safari needs actual
+ px for border radius (bug) */
+   -webkit-border-radius:63px 63px 63px 63px/
+   108px 108px 72px 72px;
+   /* fails in Safari, but overwrites in Chrome */
+   border-radius:100% 100% 200% 50%/60% 60% 40% 40%;
+}
+
+#shape2 {
+   display:block;
+   width:80px; 
+   position:absolute;
+   right:73px;
+   top:-50px;
+/* width has to be 70% of height */
+/* could use width:70%; in a square container */
+   height:250px;
+     background: -webkit-linear-gradient(red, black); /* For Safari 5.1 to 6.0 */
+background: -o-linear-gradient(red, black); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(red, black); /* For Firefox 3.6 to 15 */
+background: linear-gradient(red, black); /* Standard syntax (must be last) */
+
+/* beware that Safari needs actual
+ px for border radius (bug) */
+   -webkit-border-radius:63px 63px 63px 63px/
+   108px 108px 72px 72px;
+   /* fails in Safari, but overwrites in Chrome */
+   border-radius:100% 100% 50% 200%/60% 60% 40% 40%;
+}

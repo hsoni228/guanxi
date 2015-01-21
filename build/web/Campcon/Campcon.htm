@@ -1,0 +1,188 @@
+<html>
+<head>
+<title>
+Campcon
+</title>
+<link rel="shortcut icon" href="18.png" />
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="stylesheet" type="text/css" href="shape.css"/>
+<script type="text/javascript" src="jquery-latest.pack.js"></script>
+<script type="text/javascript" src="layer.js"></script>
+
+<link rel="stylesheet" type="text/css" href="layer.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="notification.css" media="screen" />
+<!-- Start WOWSlider.com HEAD section -->
+	<link rel="stylesheet" type="text/css" href="engine1//style.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="login.css" media="screen" />
+	<script type="text/javascript" src="engine1//jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+<script type="text/javascript">
+$(function(){
+        var el=$('input:checkbox[name="notification[]"]');
+        el.on('change', function(e){
+            if($(this).is(':checked')) el.not($(this)).prop('checked', false);
+        });
+    });
+</script>
+
+</head>
+<body scrolling="no" background="Capture.jpg" style="background-repeat:repeat;">
+
+<!-- Start WOWSlider.com BODY section id=wowslider-container1 -->
+	<div id="wowslider-container1">
+	<div class="ws_images"><ul>
+<li><img src="nit1.jpg" alt="nit" title="nit" id="wows1_0" width=1300px height=200px/></li>
+<li><img src="nit2.jpg" alt="nit" title="nit" id="wows1_0" width=1300px height=200px/></li>
+<li><img src="nit3.jpg" alt="nit" title="nit" id="wows1_0" width=1300px height=200px/></li>
+<li><img src="nit4.jpg" alt="nit" title="nit" id="wows1_0" width=1300px height=200px/></li>
+<li><img src="nit5.jpg" alt="nit" title="nit" id="wows1_0" width=1300px height=200px/></li>
+<li><img src="nit6.jpg" alt="nit" title="nit" id="wows1_0" width=1300px height=200px/></li>
+<li><img src="nit7.jpg" alt="nit" title="nit" id="wows1_0" width=1300px height=200px/></li>
+<li><img src="nit8.jpg" alt="nit" title="nit" id="wows1_0" width=1300px height=200px/></li>
+</ul></div>
+<div class="ws_bullets"><div>
+<a href="#" title="nit1"><img src="data1/tooltips/nit1.jpg" alt="nit1"/>1</a>
+<a href="#" title="nit2"><img src="data1/tooltips/nit2.jpg" alt="nit2"/>2</a>
+<a href="#" title="nit3"><img src="data1/tooltips/nit3.jpg" alt="nit3"/>3</a>
+<a href="#" title="nit4"><img src="data1/tooltips/nit4.jpg" alt="nit4"/>4</a>
+<a href="#" title="nit5"><img src="data1/tooltips/nit5.jpg" alt="nit5"/>5</a>
+<a href="#" title="nit6"><img src="data1/tooltips/nit6.jpg" alt="nit6"/>6</a>
+<a href="#" title="nit7"><img src="data1/tooltips/nit7.jpg" alt="nit7"/>7</a>
+<a href="#" title="nit8"><img src="data1/tooltips/nit8.jpg" alt="nit8"/>8</a>
+</div></div>
+<span class="wsl"><a href="http://wowslider.com">Slideshow Image</a> by WOWSlider.com v5.1</span>
+	<div id="wowslider-frame"></div>
+	<div id="wowslider-shadow"></div>
+	<a href="#" class="ws_frame"></a>
+	<div class="ws_shadow"></div>
+	</div>
+	<script type="text/javascript" src="engine1//wowslider.js"></script>
+	<script type="text/javascript" src="engine1//script.js"></script>
+<!-- End WOWSlider.com BODY section -->
+
+
+<div id="wrapper">
+	
+	<div id="content">
+		<ul class="movieposters">
+			<li>
+				<canvas id="myCanvas" width="250" height="210" style="border:10px solid white; background-color:red;"></canvas>
+				<a href="#dialog2" name="modal"><div class="movieinfo">
+					<h3>Teacher</h3>
+					<p>Here You can .....</p>
+					<b>Login</b>
+				</div></a>
+			</li>
+			<li>
+				<canvas id="myCanvas" width="250" height="210" style="border:10px solid white; background-color:green;">
+</canvas>
+				<a href="#dialog1" name="modal"><div class="movieinfo">
+					<h3>Student</h3>
+					<p>Here You Can...</p>
+					<b>Login</b>
+				</div></a>
+			</li>
+			<li>
+				<canvas id="myCanvas" width="250" height="210" style="border:10px solid white; background-color:blue;">
+</canvas>
+				<a href="#dialog3" name="modal"><div class="movieinfo">
+					<h3>Admin</h3>
+					<p>Here You Can</p>
+					<b>Login</b>
+				</div></a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
+<div id="shape"></div>
+<div id="shape2"></div>
+
+
+
+<div id="boxes">
+<div id="dialog2" class="window">
+<a href="#" style="position:relative; left:282px; top:-218px; background-color:red; display:block; 
+border-radius: 6px; border: none; font-size:20px; width:25px; height:20px; z-index:+1; text-align:center; 
+color:white; text-decoration:none" class="close"/>X</a>
+  <section class="login">
+	<div class="titulo">Staff Login</div>
+	<form action="loginPanel.jsp" method="post" enctype="application/x-www-form-urlencoded">
+    	<input type="text" name="user" required title="Username required" placeholder="Username" data-icon="U">
+        <input type="password" name="pass" required title="Password required" placeholder="Password" data-icon="x">
+		<input type="hidden" name="flag" value="teacher">
+		<br><br><br>
+        <input type="submit" value="Submit" style="display:block; background:green; width:240px; height:46px; left:-10px; border:3px; border-radius:3px solid white; font-size:25px; color:white;">
+    </form>
+</section>
+</div>
+
+<div id="dialog1" class="window">
+<a href="#" style="position:relative; left:282px; top:-218px; background-color:red; display:block; 
+border-radius: 6px; border: none; font-size:20px; width:25px; height:20px; z-index:+1; text-align:center; 
+color:white; text-decoration:none" class="close"/>X</a>
+  <section class="login">
+	<div class="titulo">Student Login</div>
+	<form action="loginPanel.jsp" method="post" enctype="application/x-www-form-urlencoded">
+    	<input type="text" name="user" required title="Username required" placeholder="Username" data-icon="U">
+        <input type="password" name="pass" required title="Password required" placeholder="Password" data-icon="x">
+		<input type="hidden" name="flag" value="student">
+        <br><br><br>
+        <input type="submit" value="Submit" style="display:block; background:green; width:240px; height:46px; left:-10px; border:3px; border-radius:3px solid white; font-size:25px; color:white;">
+    </form>
+</section>
+</div>
+
+<div id="dialog3" class="window">
+<a href="#" style="position:relative; left:282px; top:-218px; background-color:red; display:block; 
+border-radius: 6px; border: none; font-size:20px; width:25px; height:20px; z-index:+1; text-align:center; 
+color:white; text-decoration:none" class="close"/>X</a>
+  <section class="login">
+	<div class="titulo">Admin Login</div>
+	<form action="loginPanel.jsp" method="post" enctype="application/x-www-form-urlencoded">
+    	<input type="text" name="user" required title="Username required" placeholder="Username" data-icon="U">
+        <input type="password" name="pass" required title="Password required" placeholder="Password" data-icon="x">
+		<input type="hidden" name="flag" value="admin">
+        <br><br><br>
+        <input type="submit" value="Submit" style="display:block; background:green; width:240px; height:46px; left:-10px; border:3px; border-radius:3px solid white; font-size:25px; color:white;">
+    </form>
+</section>
+</div>
+</div>
+
+
+<label for="activate-check1"><img style="position: absolute; right:88px; top:85px;" width=50px; height=50px; src="phone.png"/></label>
+<input id="activate-check1" name="notification[]" class="activate-check1" type="checkbox">
+
+<div class="notifbox1">
+	<p>Himanshu Soni - 7876044832<br><br>Kunal Khanna<br><br>Anirudh Aggarwal</p>
+</div>
+</input>
+<label for="activate-check2"><img style="position: absolute; right:88px; top:15px;" width=50px; height=50px; src="about.png"/></label>
+<input id="activate-check2" name="notification[]" class="activate-check2" type="checkbox">
+
+<div class="notifbox2">
+	<p>Our 2nd Website named as Campcon.<br>In this website teachers and student will interact with each other.</p>
+</div>
+</input>
+<label for="activate-check3"><img style="position: absolute; left:83px; top:15px;" width=50px; height=50px; src="help.png"/></label>
+<input id="activate-check3" name="notification[]" class="activate-check3" type="checkbox">
+
+<div class="notifbox3">
+	<p>We are always there to help you.</p>
+</div>
+</input>
+<label for="activate-check4"><img style="position: absolute; left:86px; top:85px;" width=50px; height=50px; src="play store.png"/></label>
+<input id="activate-check4" name="notification[]" class="activate-check4" type="checkbox">
+
+<div class="notifbox4">
+	<p>Try our android app at<br><a href="http://www.google.com/">Campcon</a></p>
+</div>
+</input>
+<div id="mask"></div>
+
+
+</body>
+</html>
